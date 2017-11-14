@@ -1,0 +1,10 @@
+{
+  "name": "shopping-list-fullstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Brandon Klotz <brandonklotz@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
