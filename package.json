@@ -5,6 +5,8 @@
   "author": "Brandon Klotz <brandonklotz@icloud.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "jquery-ajax": "^2.1.4",
+    "react-redux": "^5.0.6"
   }
 }
