@@ -8,30 +8,30 @@ app.use(bodyParser.json());
 
 var database = require("./in-memory-database")();
 database.init([
-  {
-    "name": "Works",
-    "price": 10
-  }
+
 ]);
 
-app.get("/", function (req, res) {
-  res.send(database.readAll());
-});
 
-app.post('/', function(req, res) {
-    var newItem = req.body;
-    database.create(newItem);
+app.get('/api/items', function(req, res) {
     res.send(database.readAll());
 });
 
 
-// app.delete("/", function (req, res) {
-//   database.delete(database[0]);
-//   res.send(database.readAll());
-//   res.send("SUCCESS Deleting");
-// });
+app.post('/api/items', function(req, res) {
+    var newItem = req.body;
+    database.create(newItem);
+    res.send("SUCCESS");
+});
 
-var server = app.listen(4000, function () {
+
+app.delete('/api/items/:id', function(req, res) {
+    var id = req.params.id;
+    database.delete(id);
+    res.send("SUCCESS");
+});
+
+
+var server = app.listen(3001, function () {
   var port = server.address().port;
   console.log("App's server listening at http://localhost:%s", port);
 });

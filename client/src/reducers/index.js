@@ -12,7 +12,7 @@ export default function(state = INITIAL_STATE, action) {
         case "RECEIVE_ITEMS":
             return Object.assign({}, state, {
                 loading: false,
-                contacts: action.items
+                items: action.items
             });
         default:
             return state;
